@@ -20,7 +20,8 @@ export async function talk(something: string) {
     const el = document.querySelector('.askt-utterance__record')
     if (!el) return alert('no element found')
     el.dispatchEvent(mouseDownEvent)
+    await sleep(1000)
     window.speechSynthesis.speak(new SpeechSynthesisUtterance(something))
-    await sleep(5000)
+    await sleep(3500)
     el.dispatchEvent(mouseUpEvent)
 }
